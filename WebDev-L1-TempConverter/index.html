@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A temperature converter for Celsius, Fahrenheit, and Kelvin." />
+    <title>Tempwise | Temperature Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="converter-shell">
+      <section class="converter-card" aria-labelledby="page-title">
+        <div class="heading">
+          <p class="eyebrow"><span>✦</span> Simple, precise conversions</p>
+          <h1 id="page-title">Temperature<br /><em>converter</em></h1>
+          <p>Enter a value and see its equivalent across every temperature scale.</p>
+        </div>
+
+        <form id="converter-form" novalidate>
+          <div class="input-row">
+            <label for="temperature">Temperature value</label>
+            <div class="number-input"><input id="temperature" name="temperature" type="text" inputmode="decimal" autocomplete="off" placeholder="e.g. 24.5" aria-describedby="input-error" /><span id="unit-symbol">°C</span></div>
+            <p class="error-message" id="input-error" role="alert" aria-live="polite"></p>
+          </div>
+          <fieldset class="unit-picker">
+            <legend>Input unit</legend>
+            <div class="unit-options">
+              <label><input type="radio" name="unit" value="celsius" checked /><span><b>°C</b> Celsius</span></label>
+              <label><input type="radio" name="unit" value="fahrenheit" /><span><b>°F</b> Fahrenheit</span></label>
+              <label><input type="radio" name="unit" value="kelvin" /><span><b>K</b> Kelvin</span></label>
+            </div>
+          </fieldset>
+          <button class="convert-button" type="submit">Convert temperature <span aria-hidden="true">→</span></button>
+        </form>
+
+        <section class="results" aria-labelledby="results-title" aria-live="polite">
+          <div class="results-heading"><p id="results-title">Your conversion</p><span id="result-note">Ready when you are</span></div>
+          <div class="result-grid">
+            <article class="result-item active"><span>Celsius</span><strong id="celsius-result">—</strong><small>°C</small></article>
+            <article class="result-item"><span>Fahrenheit</span><strong id="fahrenheit-result">—</strong><small>°F</small></article>
+            <article class="result-item"><span>Kelvin</span><strong id="kelvin-result">—</strong><small>K</small></article>
+          </div>
+        </section>
+      </section>
+      <p class="footer-note">TEMPWISE <span>·</span> CONVERT WITH CONFIDENCE</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
