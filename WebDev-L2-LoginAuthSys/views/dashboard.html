@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your protected Guardly dashboard." />
+    <title>Dashboard | Guardly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body class="dashboard-body">
+    <main class="dashboard-shell">
+      <header class="dashboard-header">
+        <a class="brand" href="/dashboard"><span>✦</span> Esofa Space</a
+        ><button id="logout-button" class="logout-button" type="button">
+          Log out
+        </button>
+      </header>
+      <section class="dashboard-welcome">
+        <p class="eyebrow">Esofa Space Dashboard</p>
+        <h1>Welcome back, <em id="user-name">there</em>.</h1>
+        <p>This helps you manage your apoointments as an Admin.</p>
+      </section>
+      <section class="security-card">
+        <div class="security-icon">✓</div>
+        <div>
+          <p class="card-label">Session status</p>
+          <h2>Authenticated &amp; secure</h2>
+          <p>
+            Your login uses a server-side session, and your password is stored
+            as a salted bcrypt hash—not plain text.
+          </p>
+        </div>
+        <dl>
+          <div>
+            <dt>Account</dt>
+            <dd id="user-email">Loading…</dd>
+          </div>
+          <div>
+            <dt>Session</dt>
+            <dd>Active</dd>
+          </div>
+        </dl>
+      </section>
+      <section class="dashboard-note">
+        <p>Learning note</p>
+        <span></span>
+          This is designed for only Admins with access. Esofa Space is your
+          number one stop to innovation and development.</span
+        >
+      </section>
+    </main>
+    <script src="/assets/dashboard.js"></script>
+  </body>
+</html>
