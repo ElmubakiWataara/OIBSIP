@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Daily Focus is a browser-based task manager for pending and completed tasks."
+    />
+    <title>Daily Focus | To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <a class="brand" href="#top" aria-label="Daily Focus home"
+          ><span>✓</span> Daily Focus</a
+        >
+        <p id="today" class="today"></p>
+      </header>
+
+      <section class="hero" id="top" aria-labelledby="page-title">
+        <p class="eyebrow">A little clarity for your day</p>
+        <h1 id="page-title">Make space for what <em>matters.</em></h1>
+        <p>
+          Capture a task, move it forward, and keep your day feeling focused.
+        </p>
+      </section>
+
+      <section class="add-task-card" aria-labelledby="add-task-title">
+        <form id="task-form">
+          <label for="new-task" id="add-task-title"
+            >What needs your attention?</label
+          >
+          <div class="add-row">
+            <input
+              id="new-task"
+              name="task"
+              type="text"
+              maxlength="140"
+              autocomplete="off"
+              placeholder="e.g. Review the project brief"
+              required
+            />
+            <button type="submit">Add task</button>
+          </div>
+          <p
+            class="form-message"
+            id="form-message"
+            role="alert"
+            aria-live="polite"
+          ></p>
+        </form>
+      </section>
+
+      <section class="lists-grid" aria-label="Task lists">
+        <section
+          class="task-column pending-column"
+          aria-labelledby="pending-heading"
+        >
+          <div class="list-header">
+            <div>
+              <p class="section-kicker">In progress</p>
+              <h2 id="pending-heading">Pending tasks</h2>
+            </div>
+            <span class="count" id="pending-count">0 pending</span>
+          </div>
+          <ul class="task-list" id="pending-list"></ul>
+          <div class="empty-state" id="pending-empty">
+            <span>✦</span>
+            <p>Nothing is waiting for you.<br />Add a task to get started.</p>
+          </div>
+        </section>
+        <section
+          class="task-column completed-column"
+          aria-labelledby="completed-heading"
+        >
+          <div class="list-header">
+            <div>
+              <p class="section-kicker">Done &amp; dusted</p>
+              <h2 id="completed-heading">Completed tasks</h2>
+            </div>
+            <span class="count" id="completed-count">0 completed</span>
+          </div>
+          <ul class="task-list" id="completed-list"></ul>
+          <div class="empty-state" id="completed-empty">
+            <span>○</span>
+            <p>Your completed tasks<br />will appear here.</p>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer class="app-footer">
+      <p>Your Easy navigate To-Do App.</p>
+      <button id="clear-completed" type="button" disabled>
+        Clear completed
+      </button>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
