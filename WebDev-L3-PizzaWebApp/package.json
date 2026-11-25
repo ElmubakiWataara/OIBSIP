@@ -1,0 +1,9 @@
+{
+  "name": "pizzaflow",
+  "private": true,
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "npm run dev --workspace=server & npm run dev --workspace=client",
+    "start": "npm run start --workspace=server"
+  }
+}
